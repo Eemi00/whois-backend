@@ -15,9 +15,9 @@ app.add_middleware(
 )
 
 # Merkataan sivuston ROOT tällä koodille
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def read_root():
-    return {"status": "API is online", "docs": "/docs"}
+    return {"status": "API is online"}
 
 # Testataan haku tällä
 @app.get("/search")
